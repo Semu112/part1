@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hotel Booking System</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="https://kit.fontawesome.com/849e072605.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="/javascripts/index.js" async defer></script>
+
+</head>
+
+<body>
+
+  <main id="app">
+
+    <div id="search">
+      <h1>Search for bookings</h1>
+
+      <form>
+
+        <div style="display: flex; justify-content: right">
+          <!--Placeholder attribute used in css, I understand that it causes an html validating error-->
+          <input type="date" placeholder="From: " v-model="inputDate_start" value="">
+
+          <input type="date" placeholder="To: " v-model="inputDate_end">
+        </div>
+
+        <select id="suiteSelector" v-model="suite_type">
+          <option value="">Select suite type...</option>
+        </select>
+
+      </form>
+
+
+      <button v-on:click="search()">Search</button>
+    </div>
+
+    <div id="nothingFound">
+      <b>Nothing found</b>
+    </div>
+
+    <div class="resultsContainer" v-if='results != "" '>
+
+      <table>
+        <tr>
+          <th>Room #</th>
+          <th>Suite type</th>
+        </tr>
+        <tr v-for="result in results">
+          <td> {{ result.room_id }} </td>
+          <td> {{ result.suite_type }} </td>
+        </tr>
+      </table>
+
+    </div>
+
+    <div id="loading">loading</div>
+
+
+  </main>
+
+</body>
+
+</html>

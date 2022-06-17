@@ -1,0 +1,84 @@
+:root {
+  --loadingDot-diameter: 10px;
+  --loadingDot-color: darkblue;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form *{
+  width: 100%;
+}
+
+input, button {
+  margin: 5px;
+}
+
+select, input{
+  text-align: center;
+  padding: 5px;
+}
+
+input[type="date"]:before {
+  color: grey;
+  content: attr(placeholder);
+}
+
+table {
+  border-spacing: 0;
+}
+
+td, th {
+  text-align: center;
+  padding: 5px 10px;
+  width: 200px;
+}
+
+td:first-child {
+  border-right: solid;
+  border-color: lightgrey;
+}
+
+.resultsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: solid lightgrey;
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+}
+
+#search {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#nothingFound {
+  display: none;
+  width: 400px;
+  padding: 5px;
+  text-align: center;
+}
